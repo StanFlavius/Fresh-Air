@@ -1,25 +1,32 @@
-package com.example.freshair;
+package com.example.freshair.AirPollutionBlog;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+import com.example.freshair.AirPollutionNews.AirPollutionNewsView;
+import com.example.freshair.R;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link StartFragment#newInstance} factory method to
+ * Use the {@link AddPostFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class StartFragment extends Fragment {
+public class AddPostFragment extends Fragment {
 
+    private AddPostView vModel;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +36,7 @@ public class StartFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public StartFragment() {
+    public AddPostFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +46,11 @@ public class StartFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment StartFragment.
+     * @return A new instance of fragment AddPostFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static StartFragment newInstance(String param1, String param2) {
-        StartFragment fragment = new StartFragment();
+    public static AddPostFragment newInstance(String param1, String param2) {
+        AddPostFragment fragment = new AddPostFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,37 +71,38 @@ public class StartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_start, container, false);
+        return inflater.inflate(R.layout.fragment_add_post, container, false);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final NavController navController = Navigation.findNavController(view);
+        EditText titlePost = view.findViewById(R.id.titlePost);
+        ImageView imagePost = view.findViewById(R.id.imagePost);
+        EditText contentPost = view.findViewById(R.id.contentPost);
 
-        Button buttonRegister = view.findViewById(R.id.registerButton);
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
+        vModel = ViewModelProviders.of(this).get(AddPostView.class);
+        vModel.init();
+
+        imagePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_startFragment_to_registerFragment);
-            }
-        });
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, 2);
 
-        Button buttonLogIn = view.findViewById(R.id.logInButton);
-        buttonLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_startFragment_to_logInFragment);
             }
         });
+    }
 
-        Button test = view.findViewById(R.id.test);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_startFragment_to_addPostFragment);
-            }
-        });
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 2 && resultCode == RESULT){
+
+        }
     }
 }

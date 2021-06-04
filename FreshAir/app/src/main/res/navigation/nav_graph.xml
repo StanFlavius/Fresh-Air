@@ -16,6 +16,18 @@
         <action
             android:id="@+id/action_startFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_airPollutionNewsFragment"
+            app:destination="@id/airPollutionNewsFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_deviceFragment"
+            app:destination="@id/deviceFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
@@ -35,4 +47,24 @@
             android:id="@+id/action_registerFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.freshair.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" />
+    <fragment
+        android:id="@+id/airPollutionNewsFragment"
+        android:name="com.example.freshair.AirPollutionNews.AirPollutionNewsFragment"
+        android:label="fragment_air_pollution_news"
+        tools:layout="@layout/fragment_air_pollution_news" />
+    <fragment
+        android:id="@+id/deviceFragment"
+        android:name="com.example.freshair.Device.DeviceFragment"
+        android:label="fragment_device"
+        tools:layout="@layout/fragment_device" />
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.example.freshair.AirPollutionBlog.AddPostFragment"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_post" />
 </navigation>
