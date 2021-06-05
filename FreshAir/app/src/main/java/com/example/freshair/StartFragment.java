@@ -93,7 +93,7 @@ public class StartFragment extends Fragment {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_startFragment_to_addPostFragment);
+                navController.navigate(R.id.action_startFragment_to_airPollutionBlogFragment);
             }
         });
     }

@@ -37,6 +37,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.UUID;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AddPostFragment#newInstance} factory method to
@@ -143,26 +146,27 @@ public class AddPostFragment extends Fragment {
 
         if(requestCode == 2 && resultCode == Activity.RESULT_OK && data != null){
             imageUri = data.getData();
+            Log.i("IMAGEURI", imageUri.toString());
             imagePost.setImageURI(imageUri);
 
         }
     }
 
     public void addPost(String titleData, Uri imageUriData, String contentData){
-        StorageReference fileRef = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        StorageReference fileRef = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(imageUriData));
+        fileRef.putFile(imageUriData).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Log.i("MESAJ", "AM INTRAT AICI1");
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        Post post = new Post("asd", "asd", titleData, contentData, "asd", imageUriData.toString());
+                        Post post = new Post("asd", "asd", titleData, contentData, "asd", uri.toString());
 
                         Log.i("MESAJ", "AM INTRAT AICI1.1");
 
-                        db.collection("posts")
-                                .document("1")
+                        db.collection("Posts")
+                                .document(UUID.randomUUID().toString())
                                 .set(post)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
