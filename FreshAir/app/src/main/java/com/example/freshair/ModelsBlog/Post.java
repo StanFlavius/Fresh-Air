@@ -4,10 +4,19 @@ public class Post {
 
     private String firstName;
     private String lastName;
-    private String title;
+    private String titlePost;
     private String contentPost;
     private String createdAt;
     private String urlImage;
+
+    public Post(String firstName, String lastName, String titlePost, String contentPost, String createdAt, String urlImage) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.titlePost = titlePost;
+        this.contentPost = contentPost;
+        this.createdAt = createdAt;
+        this.urlImage = urlImage;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -25,12 +34,12 @@ public class Post {
         this.lastName = lastName;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitlePost() {
+        return titlePost;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitlePost(String title) {
+        this.titlePost = title;
     }
 
     public String getContentPost() {

@@ -1,5 +1,10 @@
 package com.example.freshair.Repo;
 
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.webkit.MimeTypeMap;
+
+import com.example.freshair.MainActivity;
 import com.example.freshair.ModelsBlog.Post;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -11,10 +16,6 @@ import java.util.List;
 
 public class AddPostRepo {
     private static AddPostRepo instance;
-    private DatabaseReference root = FirebaseDatabase.getInstance().getReference();
-    private StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-
-    public List<Post> dataBlogs = new ArrayList<>();
 
     public static AddPostRepo getInstance(){
         if(instance == null){
@@ -23,7 +24,5 @@ public class AddPostRepo {
         return instance;
     }
 
-    public void addPost(String titlePost, String imageUrl, String content){
 
-    }
 }

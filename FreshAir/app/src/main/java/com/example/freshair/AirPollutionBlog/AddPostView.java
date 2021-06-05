@@ -1,5 +1,7 @@
 package com.example.freshair.AirPollutionBlog;
 
+import android.net.Uri;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -16,9 +18,5 @@ public class AddPostView extends ViewModel {
     public void init(){
         postsList = new MutableLiveData<List<Post>>();
         mRepo = AddPostRepo.getInstance();
-    }
-
-    public void addPost(String titlePost, String imageUrl, String content){
-        mRepo.addPost(titlePost, imageUrl, content);
     }
 }
