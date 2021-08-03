@@ -1,17 +1,10 @@
 package com.example.freshair.Repo;
 
 import io.reactivex.Single;
-import okhttp3.internal.Util;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import androidx.lifecycle.MutableLiveData;
-
-import com.example.freshair.ApiAirPollutionNews.ApiAirPollutionNews;
-import com.example.freshair.ApiAirPollutionNews.ApiAirPollutionNewsInterface;
-import com.example.freshair.ModelsAirPollutionNews.Article;
-import com.example.freshair.ModelsAirPollutionNews.News;
+import com.example.freshair.APIs.ApiAirPollutionNews.ApiAirPollutionNews;
+import com.example.freshair.APIs.ApiAirPollutionNews.ApiAirPollutionNewsInterface;
+import com.example.freshair.Models.ModelsAirPollutionNews.Article;
 
 import java.util.ArrayList;
 import java.util.List;

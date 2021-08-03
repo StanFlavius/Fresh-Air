@@ -55,8 +55,8 @@
                 android:layout_marginRight="160dp"
                 android:text="Author"
                 android:gravity="bottom"
-                android:layout_alignLeft="@+id/title"
-                android:layout_alignStart="@+id/title"
+                android:layout_alignLeft="@+id/title_blog"
+                android:layout_alignStart="@+id/title_blog"
                 android:layout_alignRight="@id/layoutDate_blog"
                 android:layout_alignTop="@+id/layoutDate_blog"
                 android:layout_alignEnd="@id/layoutDate_blog"/>
@@ -78,7 +78,6 @@
                     android:layout_height="18dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp" />
-
                 <TextView
                     android:textColor="#606060"
                     android:id="@+id/publishedAt_blog"
@@ -90,6 +89,7 @@
 
 
             </FrameLayout>
+
 
             <TextView
                 android:layout_width="match_parent"

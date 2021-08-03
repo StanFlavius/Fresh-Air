@@ -21,7 +21,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
-import com.example.freshair.ModelsAirPollutionNews.Article;
+import com.example.freshair.Models.ModelsAirPollutionNews.Article;
 import com.example.freshair.R;
 
 /*import com.bumptech.glide.Glide;
@@ -97,9 +97,9 @@ public class AdapterRecAirPollutionNews extends RecyclerView.Adapter<AdapterRecA
         return articleList.toArray().length;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+    /*public void setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.onItemClickListener = onItemClickListener;
-    }
+    }*/
 
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
@@ -110,9 +110,9 @@ public class AdapterRecAirPollutionNews extends RecyclerView.Adapter<AdapterRecA
         TextView title, description, author, pusblishedAt, source, time;
         ImageView imageView;
         ProgressBar progressBar;
-        OnItemClickListener onItemClickListener;
+        AdapterRecAirPollutionNews.OnItemClickListener onItemClickListener;
 
-        public MyViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
+        public MyViewHolder(@NonNull View itemView, AdapterRecAirPollutionNews.OnItemClickListener onItemClickListener) {
             super(itemView);
 
             itemView.setOnClickListener(this);
@@ -133,8 +133,9 @@ public class AdapterRecAirPollutionNews extends RecyclerView.Adapter<AdapterRecA
         }
     }
 
-    public void updateData(List<Article> articles){
+    public void updateData(List<Article> articles, OnItemClickListener listener){
         this.articleList = articles;
+        this.onItemClickListener = listener;
         notifyDataSetChanged();
     }
 }

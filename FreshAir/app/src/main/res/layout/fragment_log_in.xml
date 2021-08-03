@@ -5,41 +5,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogInFragment">
+    android:background="@drawable/register_background"
+    tools:context=".Functionalities.LogIn.LogInFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
 
     <EditText
         android:id="@+id/emailLogIn"
-        android:layout_width="136dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="172dp"
-        android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/complete_form_model"
+        android:drawableLeft="@drawable/ic_user"
+        android:ems="10"
+        android:hint="    Email Address"
+        android:inputType="textPersonName"
 
-    <Button
-        android:id="@+id/buttonToLogIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:text="Button"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogIn" />
+        app:layout_constraintTop_toTopOf="@+id/textViewToHave" />
 
     <EditText
         android:id="@+id/passwordLogIn"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="72dp"
-        android:hint="Password"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/complete_form_model"
+        android:hint="    Password"
+        android:drawableLeft="@drawable/ic_password"
+        android:ems="10"
+
+        android:inputType="textPassword"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailLogIn" />
+
+    <Button
+        android:id="@+id/buttonToLogIn"
+        android:layout_width="148dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/custom_button_1"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="LOGIN"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogIn" />
+
+    <TextView
+        android:id="@+id/textViewWeAre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="WE ARE HAPPY"
+        android:textColor="@color/colorBackground"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewToHave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="TO HAVE YOU BACK"
+        android:textColor="@color/colorBackground"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWeAre" />
+
+    <TextView
+        android:id="@+id/textDont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:fontFamily="@font/bevan"
+        android:text="Don't you have an account or"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogIn" />
+
+    <TextView
+        android:id="@+id/textNewOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bevan"
+        android:text="you want to make a new one?"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDont" />
+
+
+    <TextView
+        android:id="@+id/textViewClick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bevan"
+        android:text="Click here to register"
+        android:textColor="@color/purple_500"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textNewOne" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

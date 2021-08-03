@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -9,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.freshair"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -81,4 +82,22 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    implementation 'com.akexorcist:google-direction-library:1.2.1'
+
+    compile 'com.github.bmarrdev:android-DecoView-charting:v1.2'
+
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    def work_version = "2.5.0"
+
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+
+    compile 'com.googlecode.libphonenumber:libphonenumber:8.12.26'
 }

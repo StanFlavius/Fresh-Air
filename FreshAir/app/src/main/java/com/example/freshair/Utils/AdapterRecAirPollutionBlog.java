@@ -21,8 +21,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
-import com.example.freshair.ModelsAirPollutionNews.Article;
-import com.example.freshair.ModelsBlog.Post;
+import com.example.freshair.Models.ModelsBlog.Post;
 import com.example.freshair.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -90,9 +89,9 @@ public class AdapterRecAirPollutionBlog extends RecyclerView.Adapter<AdapterRecA
         return postsList.toArray().length;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+    /*public void setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.onItemClickListener = onItemClickListener;
-    }
+    }*/
 
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
@@ -124,8 +123,9 @@ public class AdapterRecAirPollutionBlog extends RecyclerView.Adapter<AdapterRecA
         }
     }
 
-    public void updateData(List<Post> posts){
+    public void updateData(List<Post> posts, OnItemClickListener listener){
         this.postsList = posts;
+        this.onItemClickListener = listener;
         notifyDataSetChanged();
     }
 }

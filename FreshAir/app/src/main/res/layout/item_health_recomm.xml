@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="10dp" >
+
+        <ImageView
+            android:background="@drawable/back_health"
+            android:id="@+id/coImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imgHealth"
+            android:layout_width="70dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="210dp" />
+
+        <TextView
+            android:id="@+id/contentHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/bevan"
+            android:textSize="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/nameHealth"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/bevan"
+            android:text="TextView" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

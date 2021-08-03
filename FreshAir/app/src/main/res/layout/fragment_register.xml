@@ -5,59 +5,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="WELCOM TO REGISTER"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="97dp" />
+    android:background="@drawable/register_background"
+    tools:context=".Functionalities.Register.RegisterFragment">
 
     <EditText
         android:id="@+id/emailRegister"
-        android:layout_width="120dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="124dp"
-        android:hint="Email"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/complete_form_model"
+        android:drawableLeft="@drawable/ic_user"
+
+        android:hint="    Email Address"
+        android:inputType="textPersonName"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/textViewWelcome" />
 
     <EditText
         android:id="@+id/passwordRegister"
-        android:layout_width="112dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="80dp"
-        android:hint="Password"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/complete_form_model"
+        android:hint="    Password"
+        android:drawableLeft="@drawable/ic_password"
+
+
+        android:inputType="textPassword"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegister" />
 
     <EditText
         android:id="@+id/confirmPasswordRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:hint="Confirm Password"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/complete_form_model"
+        android:drawableLeft="@drawable/ic_password"
+
+        android:hint="    Confirm Password"
+        android:inputType="textPassword"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
 
     <Button
         android:id="@+id/buttonToRegister"
+        android:layout_width="148dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/custom_button_1"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="Register"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Button"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="WELCOME TO FRESH AIR"
+        android:textColor="@color/colorBackground"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAlreadyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="202dp"
+        android:fontFamily="@font/bevan"
+        android:text="Do you already have an account?"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister" />
+
+    <TextView
+        android:id="@+id/textViewClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bevan"
+        android:text="Click here to log in"
+        android:textColor="@color/purple_500"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlreadyAccount" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,11 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.freshair.ModelsBlog.Post;
+import com.example.freshair.Models.ModelsBlog.Post;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Single;
-import io.reactivex.SingleObserver;
 
 public class AirPollutionBlogRepo {
     private static AirPollutionBlogRepo instance;
@@ -33,8 +32,10 @@ public class AirPollutionBlogRepo {
     }
 
     public Single<List<Post>> getListPosts(){
+        dataBlogs = new ArrayList<>();
         return Single.create(subscriber -> {
             db.collection("Posts")
+                    .orderBy("createdAt", Query.Direction.DESCENDING)
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
